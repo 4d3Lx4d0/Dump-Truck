@@ -62,6 +62,25 @@ public class SandwichMechanic : MonoBehaviour
         topBun.transform.SetAsLastSibling();
     }
 
+    public void ResetSandwich()
+{
+    foreach (GameObject ingredient in ingredients)
+    {
+        Destroy(ingredient);
+    }
+    
+    ingredients.Clear();
+    GameObject topBun = sandwich.transform.Find("Bun").gameObject;
+    GameObject bottomBun = sandwich.transform.Find("Bread").gameObject;
+    
+    float bottomBunPos = bottomBun.GetComponent<RectTransform>().anchoredPosition.y;
+    float bottomBunHeight = bottomBun.GetComponent<RectTransform>().rect.height;
+    
+    topBun.GetComponent<RectTransform>().anchoredPosition = 
+        new Vector2(0, bottomBunPos + bottomBunHeight);
+    topBun.transform.SetAsLastSibling();
+}
+
     public void DebugIngredients()
     {
         foreach (GameObject go in ingredients)
