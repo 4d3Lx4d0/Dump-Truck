@@ -45,7 +45,7 @@ public class SandwichMechanic : MonoBehaviour
             ingredient.name = selectedMenu.name;
             ingredient.transform.SetParent(sandwich.transform);
             ingredient.GetComponent<RectTransform>().pivot = new Vector2(0.5f, 0);
-            ingredient.transform.localPosition = new Vector3(0, ingredientPos + (ingredientHeight/2), 0);
+            ingredient.transform.localPosition = new Vector3(0, ingredientPos + (ingredientHeight/3), 0);
             ingredients.Add(ingredient);
         }
 
@@ -58,7 +58,7 @@ public class SandwichMechanic : MonoBehaviour
         RectTransform topBunRect = topBun.GetComponent<RectTransform>();
         float topBunHeight = topBunRect.rect.height;
 
-        topBunRect.anchoredPosition = new Vector2(0, lastIngredientPos + lastIngredientHeight);
+        topBunRect.anchoredPosition = new Vector2(0, lastIngredientPos + (lastIngredientHeight+0.5f));
         topBun.transform.SetAsLastSibling();
     }
 
