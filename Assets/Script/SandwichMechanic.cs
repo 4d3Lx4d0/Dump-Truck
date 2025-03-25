@@ -7,10 +7,12 @@ public class SandwichMechanic : MonoBehaviour
     public GameObject sandwich, selectedMenu;
     List<GameObject> ingredients = new List<GameObject>();
 
+    public DragDrop dragDrop;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        dragDrop.onDroppedCorrectly.AddListener(ResetSandwich);
     }
 
     // Update is called once per frame
@@ -45,7 +47,7 @@ public class SandwichMechanic : MonoBehaviour
             ingredient.name = selectedMenu.name;
             ingredient.transform.SetParent(sandwich.transform);
             ingredient.GetComponent<RectTransform>().pivot = new Vector2(0.5f, 0);
-            ingredient.transform.localPosition = new Vector3(0, ingredientPos + (ingredientHeight/3), 0);
+            ingredient.transform.localPosition = new Vector3(0, ingredientPos + (ingredientHeight / 3), 0);
             ingredients.Add(ingredient);
         }
 
@@ -58,28 +60,28 @@ public class SandwichMechanic : MonoBehaviour
         RectTransform topBunRect = topBun.GetComponent<RectTransform>();
         float topBunHeight = topBunRect.rect.height;
 
-        topBunRect.anchoredPosition = new Vector2(0, lastIngredientPos + (lastIngredientHeight+0.5f));
+        topBunRect.anchoredPosition = new Vector2(0, lastIngredientPos + (lastIngredientHeight + 10f));
         topBun.transform.SetAsLastSibling();
     }
 
     public void ResetSandwich()
-{
-    foreach (GameObject ingredient in ingredients)
     {
-        Destroy(ingredient);
+        foreach (GameObject ingredient in ingredients)
+        {
+            Destroy(ingredient);
+        }
+
+        ingredients.Clear();
+        GameObject topBun = sandwich.transform.Find("Bun").gameObject;
+        GameObject bottomBun = sandwich.transform.Find("Bread").gameObject;
+
+        float bottomBunPos = bottomBun.GetComponent<RectTransform>().anchoredPosition.y;
+        float bottomBunHeight = bottomBun.GetComponent<RectTransform>().rect.height;
+
+        topBun.GetComponent<RectTransform>().anchoredPosition =
+            new Vector2(0, bottomBunPos + bottomBunHeight-8f);
+        topBun.transform.SetAsLastSibling();
     }
-    
-    ingredients.Clear();
-    GameObject topBun = sandwich.transform.Find("Bun").gameObject;
-    GameObject bottomBun = sandwich.transform.Find("Bread").gameObject;
-    
-    float bottomBunPos = bottomBun.GetComponent<RectTransform>().anchoredPosition.y;
-    float bottomBunHeight = bottomBun.GetComponent<RectTransform>().rect.height;
-    
-    topBun.GetComponent<RectTransform>().anchoredPosition = 
-        new Vector2(0, bottomBunPos + bottomBunHeight);
-    topBun.transform.SetAsLastSibling();
-}
 
     public void DebugIngredients()
     {

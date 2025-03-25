@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
 public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
@@ -7,6 +8,9 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     private RectTransform rectTransform;
     private GameObject duplicate;
     private Canvas canvas;
+
+    public UnityEvent onDroppedCorrectly;
+
 
     private void Awake()
     {
@@ -53,7 +57,9 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
             // Debug.Log("Dropped on correct location!");
             duplicate.transform.SetParent(dropLocation.transform, false);
             duplicate.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
-            //duplicate.SetActive(false);
+            duplicate.SetActive(false);
+
+            onDroppedCorrectly?.Invoke();
 
         }
         else
