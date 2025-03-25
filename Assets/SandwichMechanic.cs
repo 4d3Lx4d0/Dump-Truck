@@ -25,7 +25,7 @@ public class SandwichMechanic : MonoBehaviour
 
         if (ingredients == null || ingredients.Count == 0)
         {
-            GameObject bottomBun = sandwich.transform.Find("bottomBun").gameObject;
+            GameObject bottomBun = sandwich.transform.Find("Bread").gameObject;
             float bottomBunPos = bottomBun.GetComponent<RectTransform>().anchoredPosition.y;
             float bottomBunHeight = bottomBun.GetComponent<RectTransform>().rect.height;
 
@@ -54,7 +54,7 @@ public class SandwichMechanic : MonoBehaviour
         float lastIngredientPos = lastRect.anchoredPosition.y;
         float lastIngredientHeight = lastRect.rect.height;
 
-        GameObject topBun = sandwich.transform.Find("topBun").gameObject;
+        GameObject topBun = sandwich.transform.Find("Bun").gameObject;
         RectTransform topBunRect = topBun.GetComponent<RectTransform>();
         float topBunHeight = topBunRect.rect.height;
 
