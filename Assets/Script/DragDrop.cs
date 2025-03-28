@@ -54,7 +54,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
 
         if (IsDroppedOnTarget(eventData))
         {
-            // Debug.Log("Dropped on correct location!");
+            if (duplicate.transform.childCount == 2) Destroy(duplicate);
             duplicate.transform.SetParent(dropLocation.transform, false);
             duplicate.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
             duplicate.SetActive(false);

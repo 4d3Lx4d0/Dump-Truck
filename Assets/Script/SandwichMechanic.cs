@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class SandwichMechanic : MonoBehaviour
 {
-    public GameObject sandwich, selectedMenu;
+    public GameObject sandwich, selectedMenu, ingredientPrefab;
     List<GameObject> ingredients = new List<GameObject>();
 
     public DragDrop dragDrop;
@@ -13,6 +13,8 @@ public class SandwichMechanic : MonoBehaviour
     void Start()
     {
         dragDrop.onDroppedCorrectly.AddListener(ResetSandwich);
+        
+        
     }
 
     // Update is called once per frame
@@ -24,6 +26,8 @@ public class SandwichMechanic : MonoBehaviour
     public void addIngredients(Button button)
     {
         selectedMenu = Resources.Load<GameObject>(button.name);
+
+        if(button.GetComponent<IngredientDisplay>().GetCurStock() == 0) return;
 
         if (ingredients == null || ingredients.Count == 0)
         {
@@ -81,13 +85,5 @@ public class SandwichMechanic : MonoBehaviour
         topBun.GetComponent<RectTransform>().anchoredPosition =
             new Vector2(0, bottomBunPos + bottomBunHeight-8f);
         topBun.transform.SetAsLastSibling();
-    }
-
-    public void DebugIngredients()
-    {
-        foreach (GameObject go in ingredients)
-        {
-            print(go.name);
-        }
     }
 }
