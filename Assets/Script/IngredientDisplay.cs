@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-public class IngredientDisplay : MonoBehaviour
+public class IngredientDisplay : MonoBehaviour, IPointerClickHandler 
 {
     public Ingredient ingredient;
 
@@ -50,6 +50,11 @@ public class IngredientDisplay : MonoBehaviour
     public int GetCurStock()
     {
         return curStock;
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if (eventData.button == PointerEventData.InputButton.Right)UseRestock();
     }
 
 }
