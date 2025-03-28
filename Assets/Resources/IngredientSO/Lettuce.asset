@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a84346a6f8bcfb46bdb8cf7a16146b4, type: 3}
   m_Name: Lettuce
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
-  maxStock: 0
-  maxRestock: 0
+  sprite: {fileID: -9016660276903367548, guid: 1fd9877b7efc0094187dac1124b4daa9, type: 3}
+  type: 0
+  maxStock: 10
+  maxRestock: 3

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a84346a6f8bcfb46bdb8cf7a16146b4, type: 3}
   m_Name: Bacon
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
-  maxStock: 0
-  maxRestock: 0
+  sprite: {fileID: 4223140855742027066, guid: c5b50e12cfbf5344fa9c083b831a2081, type: 3}
+  type: 1
+  maxStock: 12
+  maxRestock: 4

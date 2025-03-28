@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a84346a6f8bcfb46bdb8cf7a16146b4, type: 3}
   m_Name: Tomato
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
-  maxStock: 0
-  maxRestock: 0
+  sprite: {fileID: 6045271141948128576, guid: 6f32185aaebecd7469a22f13c0da2305, type: 3}
+  type: 0
+  maxStock: 15
+  maxRestock: 2

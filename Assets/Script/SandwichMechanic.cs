@@ -13,8 +13,7 @@ public class SandwichMechanic : MonoBehaviour
     void Start()
     {
         dragDrop.onDroppedCorrectly.AddListener(ResetSandwich);
-        
-        
+
     }
 
     // Update is called once per frame
@@ -26,8 +25,14 @@ public class SandwichMechanic : MonoBehaviour
     public void addIngredients(Button button)
     {
         selectedMenu = Resources.Load<GameObject>(button.name);
-
-        if(button.GetComponent<IngredientDisplay>().GetCurStock() == 0) return;
+        if (button.transform.parent.name == "Ingredients")
+        {
+            if (button.GetComponent<IngredientDisplay>().GetCurStock() == 0) return;
+        }
+        else
+        {
+            if (button.GetComponent<LeftoversDisplay>().GetCurStock() == 0) return;
+        }
 
         if (ingredients == null || ingredients.Count == 0)
         {
@@ -83,7 +88,7 @@ public class SandwichMechanic : MonoBehaviour
         float bottomBunHeight = bottomBun.GetComponent<RectTransform>().rect.height;
 
         topBun.GetComponent<RectTransform>().anchoredPosition =
-            new Vector2(0, bottomBunPos + bottomBunHeight-8f);
+            new Vector2(0, bottomBunPos + bottomBunHeight - 8f);
         topBun.transform.SetAsLastSibling();
     }
 }

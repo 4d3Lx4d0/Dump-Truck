@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Events;
+using UnityEngine.EventSystems;
 
 public class IngredientDisplay : MonoBehaviour
 {
@@ -13,6 +15,8 @@ public class IngredientDisplay : MonoBehaviour
 
     public int curStock;
     public int curRestock;
+
+    public UnityEvent<Ingredient, int> restockEvent;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -37,6 +41,7 @@ public class IngredientDisplay : MonoBehaviour
     {
         if (curRestock == 0) return;
         curRestock--;
+        if(curStock>0)restockEvent?.Invoke(ingredient, curStock);
         curStock = ingredient.maxStock;
         restock.text = curRestock +  "/" + ingredient.maxRestock.ToString();
         stock.text = curStock +  "/" + ingredient.maxStock.ToString();
