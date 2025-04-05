@@ -10,7 +10,7 @@ public class IngredientDisplay : MonoBehaviour, IPointerClickHandler
 
     public Image sprite;
     public TMP_Text stock;
-    public TMP_Text restock;
+    public Slider restockSlider;
 
 
     public int curStock;
@@ -25,7 +25,6 @@ public class IngredientDisplay : MonoBehaviour, IPointerClickHandler
         transform.name = ingredient.name;
         sprite.sprite = ingredient.sprite;
         stock.text = ingredient.maxStock.ToString() +  "/" + ingredient.maxStock.ToString();
-        restock.text = ingredient.maxRestock.ToString() +  "/" + ingredient.maxRestock.ToString();
         curRestock = ingredient.maxRestock;
         curStock = ingredient.maxStock;
     }
@@ -43,7 +42,7 @@ public class IngredientDisplay : MonoBehaviour, IPointerClickHandler
         curRestock--;
         if(curStock>0)restockEvent?.Invoke(ingredient, curStock);
         curStock = ingredient.maxStock;
-        restock.text = curRestock +  "/" + ingredient.maxRestock.ToString();
+        restockSlider.value = curRestock; 
         stock.text = curStock +  "/" + ingredient.maxStock.ToString();
     }
 

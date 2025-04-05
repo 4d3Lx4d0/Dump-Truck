@@ -1,0 +1,76 @@
+{
+    "Level": [
+        {
+            "Order": [
+                {
+                    "prompt": "1 bac, 3 chick",
+                    "ingredients": [
+                        {
+                            "name": "Bacon",
+                            "count": 1,
+                            "fit": false
+                        },
+                        {
+                            "name": "Chicken",
+                            "count": 3,
+                            "fit": false
+                        }
+                    ],
+                    "type": "Meat"
+                },
+                {
+                    "prompt": "1 let, 3 tomat",
+                    "ingredients": [
+                        {
+                            "name": "Lettuce",
+                            "count": 1,
+                            "fit": false
+                        },
+                        {
+                            "name": "Tomato",
+                            "count": 3,
+                            "fit": false
+                        }
+                    ],
+                    "type": "Veggies"
+                }
+            ]
+        },
+        {
+            "Order": [
+                {
+                    "prompt": "werwerwer",
+                    "ingredients": [
+                        {
+                            "name": "Bacon",
+                            "count": 1,
+                            "fit": false
+                        },
+                        {
+                            "name": "Chicken",
+                            "count": 3,
+                            "fit": false
+                        }
+                    ],
+                    "type": "Meat"
+                },
+                {
+                    "prompt": "werwerwer",
+                    "ingredients": [
+                        {
+                            "name": "Lettuce",
+                            "count": 1,
+                            "fit": false
+                        },
+                        {
+                            "name": "Tomato",
+                            "count": 3,
+                            "fit": false
+                        }
+                    ],
+                    "type": "Veggies"
+                }
+            ]
+        }
+    ]
+}

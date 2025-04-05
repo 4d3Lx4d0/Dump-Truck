@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 1fd9877b7efc0094187dac1124b4daa9
+guid: d2aa190c49f6e784f94df8f139f326e8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -9016660276903367548
-    second: lettuce (1)_0
+      213: -2878748606614187522
+    second: chicken (2)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: lettuce (1)_0
+      name: chicken (2)_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 223
-        height: 269
+        x: 5
+        y: 2
+        width: 214
+        height: 255
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 48cacce10436ed280800000000000000
-      internalID: -9016660276903367548
+      spriteID: ef15c110561ac08d0800000000000000
+      internalID: -2878748606614187522
       vertices: []
       indices: 
       edges: []

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class LeftoversDisplay : MonoBehaviour
 {
     public Ingredient ingredient;
-
+    public Image container;
     public Image sprite;
     public TMP_Text stock;
 
@@ -30,7 +30,7 @@ public class LeftoversDisplay : MonoBehaviour
         sprite.sprite = ingredient.sprite;
         stock.text = leftoverStock.ToString();
         curStock = leftoverStock;
-
+        container.gameObject.SetActive(true);
         sprite.gameObject.SetActive(true);
         stock.gameObject.SetActive(true);
     }
@@ -43,6 +43,7 @@ public class LeftoversDisplay : MonoBehaviour
 
         if(curStock == 0)
         {
+            container.gameObject.SetActive(false);
             sprite.gameObject.SetActive(false);
             stock.gameObject.SetActive(false);
         }

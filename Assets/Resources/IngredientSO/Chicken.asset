@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a84346a6f8bcfb46bdb8cf7a16146b4, type: 3}
   m_Name: Chicken
   m_EditorClassIdentifier: 
-  sprite: {fileID: 8844464859336221142, guid: 36b3053b46e77784299742b940f95a51, type: 3}
+  sprite: {fileID: -2878748606614187522, guid: d2aa190c49f6e784f94df8f139f326e8, type: 3}
   type: 1
   maxStock: 8
   maxRestock: 4

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: c5b50e12cfbf5344fa9c083b831a2081
+guid: 8b453a9a820980b46b5072d5d2b59209
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4223140855742027066
-    second: bacon (1)_0
+      213: 749850120525353386
+    second: serving_board_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bacon (1)_0
+      name: serving_board_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 204
-        height: 235
+        x: 9
+        y: 7
+        width: 506
+        height: 230
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a3551feab3c9b9a30800000000000000
-      internalID: 4223140855742027066
+      spriteID: aa192b436b0086a00800000000000000
+      internalID: 749850120525353386
       vertices: []
       indices: 
       edges: []

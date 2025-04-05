@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 6f32185aaebecd7469a22f13c0da2305
+guid: c025bc5d57fa7ce47ba8a52ddf12df5f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6045271141948128576
-    second: tomato (1)_0
+      213: 6514938757803164973
+    second: leftover_indicator (1)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tomato (1)_0
+      name: leftover_indicator (1)_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 189
-        height: 241
+        width: 116
+        height: 115
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 04dfcba031e15e350800000000000000
-      internalID: 6045271141948128576
+      spriteID: d2548485846b96a50800000000000000
+      internalID: 6514938757803164973
       vertices: []
       indices: 
       edges: []

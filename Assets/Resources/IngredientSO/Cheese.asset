@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a84346a6f8bcfb46bdb8cf7a16146b4, type: 3}
   m_Name: Cheese
   m_EditorClassIdentifier: 
-  sprite: {fileID: 2733664120932533029, guid: 203547a6caa279641b86063f17535cec, type: 3}
+  sprite: {fileID: -1823612605290086062, guid: bedd192c230208a40be29aa7fd9d06e3, type: 3}
   type: 2
   maxStock: 20
   maxRestock: 2

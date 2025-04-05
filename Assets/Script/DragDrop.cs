@@ -58,6 +58,8 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
             duplicate.transform.SetParent(dropLocation.transform, false);
             duplicate.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
             duplicate.SetActive(false);
+            Destroy(duplicate.transform.Find("Bread").gameObject);
+            Destroy(duplicate.transform.Find("Bun").gameObject);
 
             onDroppedCorrectly?.Invoke();
 
