@@ -6,6 +6,7 @@ using System.Collections.Generic;
 public class SandwichMechanic : MonoBehaviour
 {
     public GameObject sandwich, selectedMenu, ingredientPrefab;
+    public Button resetButton;
     List<GameObject> ingredients = new List<GameObject>();
 
     public DragDrop dragDrop;
@@ -13,8 +14,9 @@ public class SandwichMechanic : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        dragDrop.onDroppedCorrectly.AddListener(ResetSandwich);
+        dragDrop.onDroppedCorrectly.AddListener(ResetSandwichSilently);
 
+        resetButton.onClick.AddListener(ResetSandwich);
     }
 
     // Update is called once per frame
@@ -76,12 +78,30 @@ public class SandwichMechanic : MonoBehaviour
 
     public void ResetSandwich()
     {
+        InternalResetSandwich(true); // tombol reset
+    }
+
+    public void ResetSandwichSilently()
+    {
+        InternalResetSandwich(false); // drag ke customer
+    }
+
+    private void InternalResetSandwich(bool restoreStock)
+    {
+        Dictionary<string, int> ingredientCount = new Dictionary<string, int>();
         foreach (GameObject ingredient in ingredients)
         {
+            string name = ingredient.name;
+            if (ingredientCount.ContainsKey(name))
+                ingredientCount[name]++;
+            else
+                ingredientCount[name] = 1;
+
             Destroy(ingredient);
         }
 
         ingredients.Clear();
+
         GameObject topBun = sandwich.transform.Find("Bun").gameObject;
         GameObject bottomBun = sandwich.transform.Find("Bread").gameObject;
 
@@ -91,5 +111,17 @@ public class SandwichMechanic : MonoBehaviour
         topBun.GetComponent<RectTransform>().anchoredPosition =
             new Vector2(0, bottomBunPos + bottomBunHeight - 8f);
         topBun.transform.SetAsLastSibling();
+
+        if (!restoreStock) return;
+
+        IngredientDisplay[] ingredientDisplays = FindObjectsOfType<IngredientDisplay>();
+        foreach (IngredientDisplay display in ingredientDisplays)
+        {
+            if (ingredientCount.ContainsKey(display.name))
+            {
+                display.AddStock(ingredientCount[display.name]);
+            }
+        }
     }
+
 }
