@@ -20,6 +20,8 @@ public class CustomerBehavior : MonoBehaviour
 
     public Animator animator;
 
+    int randomIndex = 0;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -35,10 +37,23 @@ public class CustomerBehavior : MonoBehaviour
 
     void OnEnable()
     {
+        int[] allowedIndices = { 2, 5 }; // Replace with any specific numbers you want
+
         if (sprites.Length > 0 && targetImage != null)
         {
-            int randomIndex = Random.Range(0, sprites.Length);
-            targetImage.sprite = sprites[randomIndex];
+            // Ensure all values in allowedIndices are within bounds of sprites array
+            List<int> validIndices = new List<int>();
+            foreach (int index in allowedIndices)
+            {
+                if (index >= 0 && index < sprites.Length)
+                    validIndices.Add(index);
+            }
+
+            if (validIndices.Count > 0)
+            {
+                randomIndex = validIndices[Random.Range(0, validIndices.Count)];
+                targetImage.sprite = sprites[randomIndex];
+            }
         }
         Order();
     }
@@ -71,6 +86,8 @@ public class CustomerBehavior : MonoBehaviour
 
         GameObject sandwich = transform.Find("Sandwich").gameObject;
 
+        bool falseOrder = false;
+
         for (int i = 0; i < sandwich.transform.childCount; i++)
         {
             string childName = sandwich.transform.GetChild(i).name;
@@ -84,6 +101,8 @@ public class CustomerBehavior : MonoBehaviour
                 ingredientInSandwich[childName] = 1;
             }
         }
+
+        bool matched = false;
 
         for (int i = 0; i < order.Count; i++)
         {
@@ -115,21 +134,32 @@ public class CustomerBehavior : MonoBehaviour
                 Destroy(sandwich);
                 orderDisplay.transform.GetChild(i).gameObject.SetActive(false);
                 order.RemoveAt(i);
+                targetImage.sprite = sprites[randomIndex - 1];
+                matched = true;
                 break; // keluar loop karena list order berubah (hindari error)
             }
-            else
-            {
-                Debug.Log($"Order index {i} GAGAL dipenuhi.");
-                Destroy(sandwich);
-                // reputasi turun
-                break; // keluar juga supaya gak error
-            }
         }
-        
-        if (order.Count <= 0)
+
+        if (!matched)
+        {
+            Debug.Log($"Order index GAGAL dipenuhi.");
+            Destroy(sandwich);
+            targetImage.sprite = sprites[randomIndex - 2];
+            // reputasi turun
+            falseOrder = true;
+        }
+
+        if (order.Count <= 0 || falseOrder)
         {
             animator.SetBool("Out", true);
             StartCoroutine(ResetCustomer());
+            falseOrder = false;
+            order.Clear();
+
+            foreach (Transform child in orderDisplay.transform)
+            {
+                child.gameObject.SetActive(false);
+            }
         }
     }
 
