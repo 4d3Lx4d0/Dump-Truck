@@ -15,4 +15,4 @@ MonoBehaviour:
   sprite: {fileID: -1823612605290086062, guid: bedd192c230208a40be29aa7fd9d06e3, type: 3}
   type: 2
   maxStock: 20
-  maxRestock: 2
+  maxRestock: 4
