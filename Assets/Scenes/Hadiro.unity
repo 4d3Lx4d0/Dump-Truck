@@ -1504,18 +1504,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 367354057}
-        m_TargetAssemblyTypeName: IngredientDisplay, Assembly-CSharp
-        m_MethodName: UseStock
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 150068060}
         m_TargetAssemblyTypeName: SandwichMechanic, Assembly-CSharp
         m_MethodName: addIngredients
@@ -1523,6 +1511,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 367354054}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 367354057}
+        m_TargetAssemblyTypeName: IngredientDisplay, Assembly-CSharp
+        m_MethodName: UseStock
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -3206,18 +3206,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 658511124}
-        m_TargetAssemblyTypeName: IngredientDisplay, Assembly-CSharp
-        m_MethodName: UseStock
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 150068060}
         m_TargetAssemblyTypeName: SandwichMechanic, Assembly-CSharp
         m_MethodName: addIngredients
@@ -3225,6 +3213,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 658511125}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 658511124}
+        m_TargetAssemblyTypeName: IngredientDisplay, Assembly-CSharp
+        m_MethodName: UseStock
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -5693,18 +5693,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1113540336}
-        m_TargetAssemblyTypeName: IngredientDisplay, Assembly-CSharp
-        m_MethodName: UseStock
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 150068060}
         m_TargetAssemblyTypeName: SandwichMechanic, Assembly-CSharp
         m_MethodName: addIngredients
@@ -5712,6 +5700,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 1113540337}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1113540336}
+        m_TargetAssemblyTypeName: IngredientDisplay, Assembly-CSharp
+        m_MethodName: UseStock
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -6344,18 +6344,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1239409405}
-        m_TargetAssemblyTypeName: IngredientDisplay, Assembly-CSharp
-        m_MethodName: UseStock
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 150068060}
         m_TargetAssemblyTypeName: SandwichMechanic, Assembly-CSharp
         m_MethodName: addIngredients
@@ -6363,6 +6351,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 1239409406}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1239409405}
+        m_TargetAssemblyTypeName: IngredientDisplay, Assembly-CSharp
+        m_MethodName: UseStock
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -8771,18 +8771,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2075792006}
-        m_TargetAssemblyTypeName: IngredientDisplay, Assembly-CSharp
-        m_MethodName: UseStock
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 150068060}
         m_TargetAssemblyTypeName: SandwichMechanic, Assembly-CSharp
         m_MethodName: addIngredients
@@ -8790,6 +8778,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 2075792007}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2075792006}
+        m_TargetAssemblyTypeName: IngredientDisplay, Assembly-CSharp
+        m_MethodName: UseStock
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
