@@ -6,42 +6,30 @@ using System.Collections.Generic;
 
 public class CustomerBehavior : MonoBehaviour
 {
-
     public Image targetImage;
     public Sprite[] sprites;
-
     public List<Order> order;
-
     public GameObject orderDisplay;
-
     public CustomerOrder customerOrder;
-
     public DragDrop dragDrop;
-
     public Animator animator;
 
     int randomIndex = 0;
+    private ReputationManager reputationManager;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         dragDrop.onDroppedCorrectly.AddListener(CheckSandwich);
         customerOrder = ReadOrderData.LoadData();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        reputationManager = FindObjectOfType<ReputationManager>();
     }
 
     void OnEnable()
     {
-        int[] allowedIndices = { 2, 5 }; // Replace with any specific numbers you want
+        int[] allowedIndices = { 2, 5 }; 
 
         if (sprites.Length > 0 && targetImage != null)
         {
-            // Ensure all values in allowedIndices are within bounds of sprites array
             List<int> validIndices = new List<int>();
             foreach (int index in allowedIndices)
             {
@@ -65,16 +53,19 @@ public class CustomerBehavior : MonoBehaviour
 
     private IEnumerator OrderCoroutine()
     {
-        int orderTotal = Random.Range(1, 3);
+        int orderTotal = Random.Range(1, LevelManager.Instance.currentLevel + 1); // Jumlah order berdasarkan level
 
         yield return new WaitForSeconds(3f);
 
+        int levelIndex = LevelManager.Instance.currentLevel - 1;
+        var levelOrders = customerOrder.Level[levelIndex].Order;
+
         for (int i = 0; i < orderTotal; i++)
         {
-            int orderType = Random.Range(0, 2);
+            int orderType = Random.Range(0, levelOrders.Count);
             TMP_Text prompt = orderDisplay.transform.GetChild(i).GetChild(0).GetComponent<TMP_Text>();
-            prompt.text = customerOrder.Level[0].Order[orderType].prompt;
-            order.Add(customerOrder.Level[0].Order[orderType]);
+            prompt.text = levelOrders[orderType].prompt;
+            order.Add(levelOrders[orderType]);
 
             orderDisplay.transform.GetChild(i).gameObject.SetActive(true);
         }
@@ -83,15 +74,13 @@ public class CustomerBehavior : MonoBehaviour
     public void CheckSandwich()
     {
         Dictionary<string, int> ingredientInSandwich = new Dictionary<string, int>();
-
         GameObject sandwich = transform.Find("Sandwich").gameObject;
-
         bool falseOrder = false;
 
+        // Count ingredients in sandwich
         for (int i = 0; i < sandwich.transform.childCount; i++)
         {
             string childName = sandwich.transform.GetChild(i).name;
-
             if (ingredientInSandwich.ContainsKey(childName))
             {
                 ingredientInSandwich[childName]++;
@@ -104,6 +93,7 @@ public class CustomerBehavior : MonoBehaviour
 
         bool matched = false;
 
+        // Check against orders
         for (int i = 0; i < order.Count; i++)
         {
             var orderItem = order[i];
@@ -111,7 +101,6 @@ public class CustomerBehavior : MonoBehaviour
             foreach (var ingredient in orderItem.ingredients)
             {
                 ingredient.fit = false;
-
                 if (ingredientInSandwich.ContainsKey(ingredient.name))
                 {
                     if (ingredientInSandwich[ingredient.name] == ingredient.count)
@@ -136,7 +125,13 @@ public class CustomerBehavior : MonoBehaviour
                 order.RemoveAt(i);
                 targetImage.sprite = sprites[randomIndex - 1];
                 matched = true;
-                break; // keluar loop karena list order berubah (hindari error)
+
+                // Add reputation for successful order
+                if (reputationManager != null)
+                {
+                    reputationManager.IncreaseReputation(3); // Reward for correct order
+                }
+                break;
             }
         }
 
@@ -145,8 +140,13 @@ public class CustomerBehavior : MonoBehaviour
             Debug.Log($"Order index GAGAL dipenuhi.");
             Destroy(sandwich);
             targetImage.sprite = sprites[randomIndex - 2];
-            // reputasi turun
             falseOrder = true;
+
+            // Reduce reputation for failed order
+            if (reputationManager != null)
+            {
+                reputationManager.ReduceReputation(5); // Penalty for wrong order
+            }
         }
 
         if (order.Count <= 0 || falseOrder)
@@ -166,7 +166,6 @@ public class CustomerBehavior : MonoBehaviour
     private IEnumerator ResetCustomer()
     {
         int interval = Random.Range(1, 3);
-
         yield return new WaitForSeconds(interval + 3);
         transform.gameObject.SetActive(false);
         transform.gameObject.SetActive(true);

@@ -3,72 +3,64 @@
         {
             "Order": [
                 {
-                    "prompt": "1 bac, 3 chick",
-                    "ingredients": [
-                        {
-                            "name": "Bacon",
-                            "count": 1,
-                            "fit": false
-                        },
-                        {
-                            "name": "Chicken",
-                            "count": 3,
-                            "fit": false
-                        }
-                    ],
-                    "type": "Meat"
+                    "prompt": "Basic Veggie (1 Lettuce)",
+                    "ingredients": [{"name": "Lettuce", "count": 1}],
+                    "type": "Veggie"
                 },
                 {
-                    "prompt": "1 let, 3 tomat",
-                    "ingredients": [
-                        {
-                            "name": "Lettuce",
-                            "count": 1,
-                            "fit": false
-                        },
-                        {
-                            "name": "Tomato",
-                            "count": 3,
-                            "fit": false
-                        }
-                    ],
-                    "type": "Veggies"
+                    "prompt": "Basic Veggie (1 Tomato)",
+                    "ingredients": [{"name": "Tomato", "count": 1}],
+                    "type": "Veggie"
                 }
             ]
         },
         {
             "Order": [
                 {
-                    "prompt": "werwerwer",
+                    "prompt": "BLT (1 Bacon, 1 Lettuce, 1 Tomato)",
                     "ingredients": [
-                        {
-                            "name": "Bacon",
-                            "count": 1,
-                            "fit": false
-                        },
-                        {
-                            "name": "Chicken",
-                            "count": 3,
-                            "fit": false
-                        }
+                        {"name": "Bacon", "count": 1},
+                        {"name": "Lettuce", "count": 1},
+                        {"name": "Tomato", "count": 1}
+                    ],
+                    "type": "Combo"
+                },
+                {
+                    "prompt": "Chicken Sandwich (2 Chicken)",
+                    "ingredients": [{"name": "Chicken", "count": 2}],
+                    "type": "Meat"
+                }
+            ]
+        },
+        {
+            "Order": [
+                {
+                    "prompt": "Deluxe BLT (2 Bacon, 2 Lettuce, 2 Tomato)",
+                    "ingredients": [
+                        {"name": "Bacon", "count": 2},
+                        {"name": "Lettuce", "count": 2},
+                        {"name": "Tomato", "count": 2}
+                    ],
+                    "type": "Combo"
+                },
+                {
+                    "prompt": "Cheesy Chicken (1 Cheese, 2 Chicken)",
+                    "ingredients": [
+                        {"name": "Cheese", "count": 1},
+                        {"name": "Chicken", "count": 2}
                     ],
                     "type": "Meat"
                 },
                 {
-                    "prompt": "werwerwer",
+                    "prompt": "Full House (1 of each)",
                     "ingredients": [
-                        {
-                            "name": "Lettuce",
-                            "count": 1,
-                            "fit": false
-                        },
-                        {
-                            "name": "Tomato",
-                            "count": 3,
-                            "fit": false
-                        }
+                        {"name": "Bacon", "count": 1},
+                        {"name": "Chicken", "count": 1},
+                        {"name": "Cheese", "count": 1},
+                        {"name": "Lettuce", "count": 1},
+                        {"name": "Tomato", "count": 1}
                     ],
-                    "type": "Veggies"
+                    "type": "Combo"
                 }
             ]
         }
