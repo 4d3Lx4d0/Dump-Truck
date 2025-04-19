@@ -31,6 +31,12 @@ public class ReputationManager : MonoBehaviour
         return currentReputation;
     }
 
+    // Tambahan untuk sistem level
+    public bool HasEnoughReputation(int requiredAmount)
+    {
+        return currentReputation >= requiredAmount;
+    }
+
     private void UpdateReputationDisplay()
     {
         if (reputationText != null)

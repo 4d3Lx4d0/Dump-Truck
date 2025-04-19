@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 public class IngredientDisplay : MonoBehaviour, IPointerClickHandler 
 {
     public Ingredient ingredient;
-
+    private LevelManager levelManager;
     public Image sprite;
     public TMP_Text stock;
     public Slider restockSlider;
@@ -22,11 +22,18 @@ public class IngredientDisplay : MonoBehaviour, IPointerClickHandler
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        levelManager = LevelManager.Instance;
+
         transform.name = ingredient.name;
         sprite.sprite = ingredient.sprite;
-        stock.text = ingredient.maxStock.ToString() +  "/" + ingredient.maxStock.ToString();
+        stock.text = ingredient.maxStock.ToString() + "/" + ingredient.maxStock.ToString();
         curRestock = ingredient.maxRestock;
         curStock = ingredient.maxStock;
+
+        if (!levelManager.IsIngredientAvailable(ingredient.name))
+        {
+            gameObject.SetActive(false);
+        }
     }
 
     public void UseStock()

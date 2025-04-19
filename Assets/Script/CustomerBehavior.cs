@@ -53,16 +53,19 @@ public class CustomerBehavior : MonoBehaviour
 
     private IEnumerator OrderCoroutine()
     {
-        int orderTotal = Random.Range(1, 3);
+        int orderTotal = Random.Range(1, LevelManager.Instance.currentLevel + 1); // Jumlah order berdasarkan level
 
         yield return new WaitForSeconds(3f);
 
+        int levelIndex = LevelManager.Instance.currentLevel - 1;
+        var levelOrders = customerOrder.Level[levelIndex].Order;
+
         for (int i = 0; i < orderTotal; i++)
         {
-            int orderType = Random.Range(0, 2);
+            int orderType = Random.Range(0, levelOrders.Count);
             TMP_Text prompt = orderDisplay.transform.GetChild(i).GetChild(0).GetComponent<TMP_Text>();
-            prompt.text = customerOrder.Level[0].Order[orderType].prompt;
-            order.Add(customerOrder.Level[0].Order[orderType]);
+            prompt.text = levelOrders[orderType].prompt;
+            order.Add(levelOrders[orderType]);
 
             orderDisplay.transform.GetChild(i).gameObject.SetActive(true);
         }
