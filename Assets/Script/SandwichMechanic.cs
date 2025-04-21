@@ -3,35 +3,18 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 
-
 public class SandwichMechanic : MonoBehaviour
 {
     public GameObject sandwich, selectedMenu, ingredientPrefab;
     public Button resetButton;
     List<GameObject> ingredients = new List<GameObject>();
-
-    public CustomerOrder customOrder;
     public DragDrop dragDrop;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        string sceneName = SceneManager.GetActiveScene().name;
-        string numberStr = System.Text.RegularExpressions.Regex.Match(sceneName, @"\d+").Value;
-
-        if (int.TryParse(numberStr, out int level))
-        {
-            Debug.Log("Level: " + level);
-        }
-        else
-        {
-            Debug.LogWarning("Scene name doesn't contain a valid level number.");
-            level = 0; // default fallback
-        }
-
         dragDrop.onDroppedCorrectly.AddListener(ResetSandwichSilently);
         resetButton.onClick.AddListener(ResetSandwich);
-        customOrder = ReadOrderData.LoadData();
     }
 
 

@@ -41,6 +41,13 @@
             ]
         },
         {
+            "AvailableIngredients": [
+                "Bacon",
+                "Lettuce",
+                "Tomato",
+                "Cheese",
+                "Chicken"
+            ],
             "Order": [
                 {
                     "prompt": "2 Bacon, 1 Lettuce, 3 Tomato",
@@ -83,6 +90,15 @@
             ]
         },
         {
+            "AvailableIngredients": [
+                "Bacon",
+                "Lettuce",
+                "Tomato",
+                "Cheese",
+                "Chicken",
+                "GroundBeef",
+                "Onion"
+            ],
             "Order": [
                 {
                     "prompt": "4 Bacon, 4 Lettuce, 4 Tomato",

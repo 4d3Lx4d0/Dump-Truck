@@ -3,11 +3,11 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class IngredientDisplay : MonoBehaviour, IPointerClickHandler 
 {
     public Ingredient ingredient;
-    private LevelManager levelManager;
     public Image sprite;
     public TMP_Text stock;
     public Slider restockSlider;
@@ -18,11 +18,12 @@ public class IngredientDisplay : MonoBehaviour, IPointerClickHandler
 
     public UnityEvent<Ingredient, int> restockEvent;
 
+    public CustomerOrder customOrder;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        levelManager = LevelManager.Instance;
 
         transform.name = ingredient.name;
         sprite.sprite = ingredient.sprite;
@@ -30,9 +31,19 @@ public class IngredientDisplay : MonoBehaviour, IPointerClickHandler
         curRestock = ingredient.maxRestock;
         curStock = ingredient.maxStock;
 
-        if (!levelManager.IsIngredientAvailable(ingredient.name))
+        transform.gameObject.SetActive(false);
+
+        customOrder = ReadOrderData.LoadData();
+
+        string sceneName = SceneManager.GetActiveScene().name;
+        int sceneNumber = int.Parse(sceneName);
+
+        foreach (var item in customOrder.Level[sceneNumber - 1].AvailableIngredients)
         {
-            gameObject.SetActive(false);
+            if (transform.name.Equals(item))
+            {
+                transform.gameObject.SetActive(true);
+            }
         }
     }
 
