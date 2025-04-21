@@ -19,8 +19,23 @@
                     "type": "Veggie"
                 },
                 {
-                    "prompt": "1 tomat 3 let",
-                    "ingredients": [{"name": "Tomato", "count": 2}, {"name": "Lettuce", "count": 1}],
+                    "prompt": "1 tomat 2 let",
+                    "ingredients": [{"name": "Tomato", "count": 1}, {"name": "Lettuce", "count": 2}],
+                    "type": "Veggie"
+                },
+                {
+                    "prompt": "3 let",
+                    "ingredients": [{"name": "Lettuce", "count": 3}],
+                    "type": "Veggie"
+                },
+                {
+                    "prompt": "3 tomato",
+                    "ingredients": [{"name": "Lettuce", "count": 3}],
+                    "type": "Veggie"
+                },
+                {
+                    "prompt": "2 tomat 2 let",
+                    "ingredients": [{"name": "Tomato", "count": 2}, {"name": "Lettuce", "count": 2}],
                     "type": "Veggie"
                 }
             ]
@@ -54,25 +69,35 @@
                         {"name": "Tomato", "count": 4}
                     ],
                     "type": "Combo"
+                },
+                {
+                    "prompt": "2 Bacon, 3 Lettuce, 4 Tomato",
+                    "ingredients": [
+                        {"name": "Bacon", "count": 2},
+                        {"name": "Lettuce", "count": 3},
+                        {"name": "Tomato", "count": 3},
+                        {"name": "Chicken", "count": 2}
+                    ],
+                    "type": "Combo"
                 }
             ]
         },
         {
             "Order": [
                 {
-                    "prompt": "3 Bacon, 3 Lettuce, 3 Tomato",
+                    "prompt": "4 Bacon, 4 Lettuce, 4 Tomato",
                     "ingredients": [
-                        {"name": "Bacon", "count": 2},
-                        {"name": "Lettuce", "count": 2},
-                        {"name": "Tomato", "count": 2}
+                        {"name": "Bacon", "count": 4},
+                        {"name": "Lettuce", "count": 4},
+                        {"name": "Tomato", "count": 4}
                     ],
                     "type": "Combo"
                 },
                 {
                     "prompt": "Cheesy Chicken (5 Cheese, 3 Chicken)",
                     "ingredients": [
-                        {"name": "Cheese", "count": 1},
-                        {"name": "Chicken", "count": 2}
+                        {"name": "Cheese", "count": 6},
+                        {"name": "Chicken", "count": 4}
                     ],
                     "type": "Meat"
                 },
@@ -84,6 +109,15 @@
                         {"name": "Cheese", "count": 2},
                         {"name": "Lettuce", "count": 2},
                         {"name": "Tomato", "count": 2}
+                    ],
+                    "type": "Combo"
+                },
+                {
+                    "prompt": "no meat 3 of everything",
+                    "ingredients": [
+                        {"name": "Cheese", "count": 3},
+                        {"name": "Lettuce", "count": 3},
+                        {"name": "Tomato", "count": 3}
                     ],
                     "type": "Combo"
                 }

@@ -53,21 +53,50 @@ public class CustomerBehavior : MonoBehaviour
 
     private IEnumerator OrderCoroutine()
     {
-        int orderTotal = Random.Range(1, LevelManager.Instance.currentLevel + 1); // Jumlah order berdasarkan level
+        // Wait until LevelManager is initialized
+        while (LevelManager.Instance == null)
+        {
+            yield return null;
+        }
+
+        int orderTotal = Random.Range(1, LevelManager.Instance.currentLevel + 1);
 
         yield return new WaitForSeconds(3f);
 
-        int levelIndex = LevelManager.Instance.currentLevel - 1;
+        // Add null check for customerOrder
+        if (customerOrder == null || customerOrder.Level == null || customerOrder.Level.Count == 0)
+        {
+            Debug.LogError("Customer order data not loaded properly!");
+            yield break;
+        }
+
+        int levelIndex = Mathf.Clamp(LevelManager.Instance.currentLevel - 1, 0, customerOrder.Level.Count - 1);
         var levelOrders = customerOrder.Level[levelIndex].Order;
+
+        // Add null check for orderDisplay
+        if (orderDisplay == null)
+        {
+            Debug.LogError("Order display reference is missing!");
+            yield break;
+        }
 
         for (int i = 0; i < orderTotal; i++)
         {
+            if (i >= orderDisplay.transform.childCount)
+            {
+                Debug.LogWarning("Not enough order display slots available");
+                break;
+            }
+
             int orderType = Random.Range(0, levelOrders.Count);
             TMP_Text prompt = orderDisplay.transform.GetChild(i).GetChild(0).GetComponent<TMP_Text>();
-            prompt.text = levelOrders[orderType].prompt;
-            order.Add(levelOrders[orderType]);
 
-            orderDisplay.transform.GetChild(i).gameObject.SetActive(true);
+            if (prompt != null)
+            {
+                prompt.text = levelOrders[orderType].prompt;
+                order.Add(levelOrders[orderType]);
+                orderDisplay.transform.GetChild(i).gameObject.SetActive(true);
+            }
         }
     }
 

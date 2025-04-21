@@ -16,14 +16,24 @@ public class SandwichMechanic : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        int level = int.Parse(SceneManager.GetActiveScene().name);
+        string sceneName = SceneManager.GetActiveScene().name;
+        string numberStr = System.Text.RegularExpressions.Regex.Match(sceneName, @"\d+").Value;
+
+        if (int.TryParse(numberStr, out int level))
+        {
+            Debug.Log("Level: " + level);
+        }
+        else
+        {
+            Debug.LogWarning("Scene name doesn't contain a valid level number.");
+            level = 0; // default fallback
+        }
 
         dragDrop.onDroppedCorrectly.AddListener(ResetSandwichSilently);
-
         resetButton.onClick.AddListener(ResetSandwich);
-
         customOrder = ReadOrderData.LoadData();
     }
+
 
     // Update is called once per frame
     void Update()
