@@ -1,11 +1,14 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ReputationManager : MonoBehaviour
 {
     [SerializeField] private int startingReputation = 100;
     [SerializeField] private TMP_Text reputationText;
     private int currentReputation;
+
+    public Image star;
 
     void Start()
     {
@@ -42,6 +45,7 @@ public class ReputationManager : MonoBehaviour
         if (reputationText != null)
         {
             reputationText.text = $"Reputation: {currentReputation}";
+            star.fillAmount = currentReputation/100f;
         }
     }
 }

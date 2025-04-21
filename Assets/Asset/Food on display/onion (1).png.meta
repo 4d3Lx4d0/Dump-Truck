@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: cadb3f9a192025c4ca72cb3758d30609
+guid: d7cfd91923b44694d958df17e90c046f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5697439885443171598
-    second: angry (4)_0
+      213: 4462954845244257110
+    second: onion (1)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: angry (4)_0
+      name: onion (1)_0
       rect:
         serializedVersion: 2
-        x: 50
-        y: 0
-        width: 421
-        height: 427
+        x: 36
+        y: 26
+        width: 347
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e058bf4b36f511f40800000000000000
-      internalID: 5697439885443171598
+      spriteID: 653746739c99fed30800000000000000
+      internalID: 4462954845244257110
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      angry (4)_0: 5697439885443171598
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
