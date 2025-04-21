@@ -1,15 +1,26 @@
 {
     "Level": [
         {
+            "AvailableIngredients": [
+                "Bacon",
+                "Lettuce",
+                "Tomato"
+            ],
             "Order": [
                 {
-                    "prompt": "Basic Veggie (1 Lettuce)",
-                    "ingredients": [{"name": "Lettuce", "count": 1}],
+                    "prompt": "1 lettuce 1 tomat",
+                    "ingredients": [{"name": "Lettuce", "count": 1}, {"name": "Tomato", "count": 1}], 
+                                    
                     "type": "Veggie"
                 },
                 {
-                    "prompt": "Basic Veggie (1 Tomato)",
-                    "ingredients": [{"name": "Tomato", "count": 1}],
+                    "prompt": "2 tomat 1 let",
+                    "ingredients": [{"name": "Tomato", "count": 2}, {"name": "Lettuce", "count": 1}],
+                    "type": "Veggie"
+                },
+                {
+                    "prompt": "1 tomat 3 let",
+                    "ingredients": [{"name": "Tomato", "count": 2}, {"name": "Lettuce", "count": 1}],
                     "type": "Veggie"
                 }
             ]
@@ -17,25 +28,39 @@
         {
             "Order": [
                 {
-                    "prompt": "BLT (1 Bacon, 1 Lettuce, 1 Tomato)",
+                    "prompt": "2 Bacon, 1 Lettuce, 3 Tomato",
                     "ingredients": [
-                        {"name": "Bacon", "count": 1},
+                        {"name": "Bacon", "count": 2},
                         {"name": "Lettuce", "count": 1},
-                        {"name": "Tomato", "count": 1}
+                        {"name": "Tomato", "count": 3}
                     ],
                     "type": "Combo"
                 },
                 {
-                    "prompt": "Chicken Sandwich (2 Chicken)",
-                    "ingredients": [{"name": "Chicken", "count": 2}],
+                    "prompt": "steeves lava chicken 4",
+                    "ingredients": [{"name": "Chicken", "count": 4}],
                     "type": "Meat"
+                },
+                {
+                    "prompt": "i love meat 2 chicken 3 bacon",
+                    "ingredients": [{"name": "Chicken", "count": 2}, {"name": "Bacon", "count":3}],
+                    "type": "Meat"
+                },
+                {
+                    "prompt": "2 Bacon, 3 Lettuce, 4 Tomato",
+                    "ingredients": [
+                        {"name": "Bacon", "count": 2},
+                        {"name": "Lettuce", "count": 3},
+                        {"name": "Tomato", "count": 4}
+                    ],
+                    "type": "Combo"
                 }
             ]
         },
         {
             "Order": [
                 {
-                    "prompt": "Deluxe BLT (2 Bacon, 2 Lettuce, 2 Tomato)",
+                    "prompt": "3 Bacon, 3 Lettuce, 3 Tomato",
                     "ingredients": [
                         {"name": "Bacon", "count": 2},
                         {"name": "Lettuce", "count": 2},
@@ -44,7 +69,7 @@
                     "type": "Combo"
                 },
                 {
-                    "prompt": "Cheesy Chicken (1 Cheese, 2 Chicken)",
+                    "prompt": "Cheesy Chicken (5 Cheese, 3 Chicken)",
                     "ingredients": [
                         {"name": "Cheese", "count": 1},
                         {"name": "Chicken", "count": 2}
@@ -52,13 +77,13 @@
                     "type": "Meat"
                 },
                 {
-                    "prompt": "Full House (1 of each)",
+                    "prompt": "Full House (2 of each)",
                     "ingredients": [
-                        {"name": "Bacon", "count": 1},
-                        {"name": "Chicken", "count": 1},
-                        {"name": "Cheese", "count": 1},
-                        {"name": "Lettuce", "count": 1},
-                        {"name": "Tomato", "count": 1}
+                        {"name": "Bacon", "count": 2},
+                        {"name": "Chicken", "count": 2},
+                        {"name": "Cheese", "count": 2},
+                        {"name": "Lettuce", "count": 2},
+                        {"name": "Tomato", "count": 2}
                     ],
                     "type": "Combo"
                 }

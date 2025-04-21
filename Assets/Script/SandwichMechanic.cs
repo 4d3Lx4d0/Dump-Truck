@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 
 public class SandwichMechanic : MonoBehaviour
@@ -9,14 +10,19 @@ public class SandwichMechanic : MonoBehaviour
     public Button resetButton;
     List<GameObject> ingredients = new List<GameObject>();
 
+    public CustomerOrder customOrder;
     public DragDrop dragDrop;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        int level = int.Parse(SceneManager.GetActiveScene().name);
+
         dragDrop.onDroppedCorrectly.AddListener(ResetSandwichSilently);
 
         resetButton.onClick.AddListener(ResetSandwich);
+
+        customOrder = ReadOrderData.LoadData();
     }
 
     // Update is called once per frame

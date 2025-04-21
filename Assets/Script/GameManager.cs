@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
 
         if (!isMaxLevel)
         {
-            reputationRequirementText.text = $"Naik ke Level {levelManager.currentLevel + 1}\nButuh {GetRequiredReputation()} Reputasi";
+            reputationRequirementText.text = $"{levelManager.currentLevel + 1}\nRequires {GetRequiredReputation()} Reputation";
         }
         else
         {

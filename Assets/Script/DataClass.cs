@@ -11,6 +11,7 @@ public class CustomerOrder
 [System.Serializable]
 public class Level
 {
+    public List<string> AvailableIngredients;
     public List<Order> Order;
 }
 
