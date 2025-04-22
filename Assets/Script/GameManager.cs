@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
                 maxCustomer = 10;
                 break;
             case 2:
-                maxCustomer = 20;
+                maxCustomer = 15;
                 break;
         }
 
@@ -42,13 +42,22 @@ public class GameManager : MonoBehaviour
     public void OrderSuccess()
     {
         successfulOrder++;
-
-        if (successfulOrder >= maxCustomer) SceneManager.LoadScene(sceneNumber + 1);
-
         UpdateBackgroundAlpha();
+
+        if (successfulOrder >= maxCustomer)
+        {
+            if (sceneNumber == 3)
+            {
+                SceneManager.LoadScene("Main Menyu");
+            }
+            else
+            {
+                SceneManager.LoadScene(sceneNumber + 1);
+            }
+        }
     }
 
-    private void UpdateBackgroundAlpha()
+        private void UpdateBackgroundAlpha()
     {
         float alpha = 1f - ((float)successfulOrder / maxCustomer);
         alpha = Mathf.Clamp01(alpha); // Ensure value stays between 0-1

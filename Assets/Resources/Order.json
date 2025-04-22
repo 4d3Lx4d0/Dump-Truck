@@ -20,7 +20,7 @@
                 },
                 {
                     "prompt": "3 Tomatos and 2 Lettuce",
-                    "ingredients": [{"name": "Tomato", "count": 4}, {"name": "Lettuce", "count": 2}],
+                    "ingredients": [{"name": "Tomato", "count": 3}, {"name": "Lettuce", "count": 2}],
                     "type": "Veggie"
                 },
                
@@ -55,26 +55,26 @@
                     "type": "Combo"
                 },
                 {
-                    "prompt": "steeves lava chicken 4",
+                    "prompt": "a whole 4 chicken",
                     "ingredients": [{"name": "Chicken", "count": 4}],
                     "type": "Meat"
                 },
                 {
-                    "prompt": "i love meat 2 chicken 3 bacon",
+                    "prompt": "i love meat! 2 chicken + 3 bacon pls",
                     "ingredients": [{"name": "Chicken", "count": 2}, {"name": "Bacon", "count":3}],
                     "type": "Meat"
                 },
                 {
-                    "prompt": "2 Bacon, 3 Lettuce, 4 Tomato",
+                    "prompt": "1 Bacon, 3 Lettuce, 3 Tomato",
                     "ingredients": [
-                        {"name": "Bacon", "count": 2},
+                        {"name": "Bacon", "count": 1},
                         {"name": "Lettuce", "count": 3},
-                        {"name": "Tomato", "count": 4}
+                        {"name": "Tomato", "count": 3}
                     ],
                     "type": "Combo"
                 },
                 {
-                    "prompt": "2 Bacon, 3 Lettuce, 4 Tomato",
+                    "prompt": "Level 2 Special(3 Lettuce & Tomato, 2 Bacon & Chicken",
                     "ingredients": [
                         {"name": "Bacon", "count": 2},
                         {"name": "Lettuce", "count": 3},
@@ -106,10 +106,11 @@
                     "type": "Combo"
                 },
                 {
-                    "prompt": "Cheesy Chicken (5 Cheese, 3 Chicken)",
+                    "prompt": "Cheesy Chicken & Beef (6 Cheese, 4 Chicken, and 3 Beef)",
                     "ingredients": [
                         {"name": "Cheese", "count": 6},
-                        {"name": "Chicken", "count": 4}
+                        {"name": "Chicken", "count": 4},
+                        {"name": "GroundBeef", "count": 3}
                     ],
                     "type": "Meat"
                 },
