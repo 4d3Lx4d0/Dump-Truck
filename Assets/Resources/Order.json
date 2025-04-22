@@ -23,19 +23,10 @@
                     "ingredients": [{"name": "Tomato", "count": 1}, {"name": "Lettuce", "count": 2}],
                     "type": "Veggie"
                 },
+               
                 {
-                    "prompt": "3 let",
-                    "ingredients": [{"name": "Lettuce", "count": 3}],
-                    "type": "Veggie"
-                },
-                {
-                    "prompt": "3 tomato",
-                    "ingredients": [{"name": "Lettuce", "count": 3}],
-                    "type": "Veggie"
-                },
-                {
-                    "prompt": "2 tomat 2 let",
-                    "ingredients": [{"name": "Tomato", "count": 2}, {"name": "Lettuce", "count": 2}],
+                    "prompt": "2 tomat 2 let 2 bacon",
+                    "ingredients": [{"name": "Tomato", "count": 2}, {"name": "Lettuce", "count": 2}, {"name": "Bacon", "count": 2}],
                     "type": "Veggie"
                 }
             ]
@@ -124,7 +115,9 @@
                         {"name": "Chicken", "count": 2},
                         {"name": "Cheese", "count": 2},
                         {"name": "Lettuce", "count": 2},
-                        {"name": "Tomato", "count": 2}
+                        {"name": "Tomato", "count": 2},
+                        {"name": "GroundBeef", "count": 2},
+                        {"name": "Onion", "count": 2}
                     ],
                     "type": "Combo"
                 },
@@ -133,7 +126,8 @@
                     "ingredients": [
                         {"name": "Cheese", "count": 3},
                         {"name": "Lettuce", "count": 3},
-                        {"name": "Tomato", "count": 3}
+                        {"name": "Tomato", "count": 3},
+                        {"name": "Onion", "count": 2}
                     ],
                     "type": "Combo"
                 }

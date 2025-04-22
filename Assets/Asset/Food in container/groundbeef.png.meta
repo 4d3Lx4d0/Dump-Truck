@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      groundbeef_0: 9097859050124834534
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
