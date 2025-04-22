@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using TMPro;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class CustomerBehavior : MonoBehaviour
 {
@@ -14,11 +15,15 @@ public class CustomerBehavior : MonoBehaviour
     public DragDrop dragDrop;
     public Animator animator;
 
+    public int sceneNumber;
+
     int randomIndex = 0;
     private ReputationManager reputationManager;
 
     void Start()
     {
+        string sceneName = SceneManager.GetActiveScene().name;
+        sceneNumber = int.Parse(sceneName);
         dragDrop.onDroppedCorrectly.AddListener(CheckSandwich);
         customerOrder = ReadOrderData.LoadData();
         reputationManager = FindObjectOfType<ReputationManager>();
@@ -59,10 +64,10 @@ public class CustomerBehavior : MonoBehaviour
 
         for (int i = 0; i < orderTotal; i++)
         {
-            int orderType = Random.Range(0, 2);
+            int orderType = Random.Range(0, 4);
             TMP_Text prompt = orderDisplay.transform.GetChild(i).GetChild(0).GetComponent<TMP_Text>();
-            prompt.text = customerOrder.Level[0].Order[orderType].prompt;
-            order.Add(customerOrder.Level[0].Order[orderType]);
+            prompt.text = customerOrder.Level[sceneNumber].Order[orderType].prompt;
+            order.Add(customerOrder.Level[sceneNumber].Order[orderType]);
 
             orderDisplay.transform.GetChild(i).gameObject.SetActive(true);
         }

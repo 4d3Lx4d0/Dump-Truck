@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class ReputationManager : MonoBehaviour
 {
-    [SerializeField] private int startingReputation = 20;
+    [SerializeField] private int startingReputation;
     [SerializeField] private TMP_Text reputationText;
     private int currentReputation;
 
@@ -45,7 +45,7 @@ public class ReputationManager : MonoBehaviour
         if (reputationText != null)
         {
             reputationText.text = $"Reputation: {currentReputation}";
-            star.fillAmount = currentReputation/100f;
+            star.fillAmount = (float)currentReputation/startingReputation;
         }
     }
 }
