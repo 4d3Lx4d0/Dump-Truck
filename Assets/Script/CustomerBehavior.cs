@@ -4,6 +4,8 @@ using TMPro;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
+using UnityEngine.EventSystems;
 
 public class CustomerBehavior : MonoBehaviour
 {
@@ -16,6 +18,8 @@ public class CustomerBehavior : MonoBehaviour
     public Animator animator;
 
     public int sceneNumber;
+
+    public UnityEvent successfulOrder;
 
     int randomIndex = 0;
     private ReputationManager reputationManager;
@@ -153,6 +157,7 @@ public class CustomerBehavior : MonoBehaviour
 
         if (order.Count <= 0 || falseOrder)
         {
+            if (!falseOrder) successfulOrder?.Invoke();
             animator.SetBool("Out", true);
             StartCoroutine(ResetCustomer());
             falseOrder = false;

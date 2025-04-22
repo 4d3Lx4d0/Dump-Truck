@@ -1,75 +1,64 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    [Header("UI Elements")]
-    public TMP_Text levelText;
-    public TMP_Text reputationRequirementText;
-    public Button nextLevelButton;
-    public GameObject levelUpPanel;
+    public CustomerBehavior customerBehavior;
+    public Image background;
 
-    private LevelManager levelManager;
-    private ReputationManager reputationManager;
+    public int sceneNumber;
+
+    public int maxCustomer;
+
+    public int successfulOrder = 0;
 
     void Start()
     {
-        levelManager = LevelManager.Instance;
-        reputationManager = FindObjectOfType<ReputationManager>();
-        UpdateUI();
+        customerBehavior.successfulOrder.AddListener(OrderSuccess);
 
-        nextLevelButton.onClick.AddListener(TryLevelUp);
-    }
+        string sceneName = SceneManager.GetActiveScene().name;
+        sceneNumber = int.Parse(sceneName) - 1;
 
-    void Update()
-    {
-        // Update UI secara real-time ketika reputasi berubah
-        UpdateLevelUpAvailability();
-    }
-
-    void UpdateUI()
-    {
-        levelText.text = "Level: " + levelManager.currentLevel;
-        UpdateLevelUpAvailability();
-    }
-
-    void UpdateLevelUpAvailability()
-    {
-        bool isMaxLevel = levelManager.currentLevel >= 3;
-        bool hasEnoughRep = reputationManager.GetCurrentReputation() >= GetRequiredReputation();
-
-        nextLevelButton.interactable = !isMaxLevel && hasEnoughRep;
-        levelUpPanel.SetActive(!isMaxLevel && hasEnoughRep);
-
-        if (!isMaxLevel)
+        switch (sceneNumber)
         {
-            reputationRequirementText.text = $"{levelManager.currentLevel + 1}\nRequires {GetRequiredReputation()} Reputation";
+            case 0:
+                maxCustomer = 5;
+                break;
+            case 1:
+                maxCustomer = 10;
+                break;
+            case 2:
+                maxCustomer = 20;
+                break;
         }
-        else
-        {
-            reputationRequirementText.text = "Level Maksimal!";
-        }
+
+
     }
 
-    int GetRequiredReputation()
+
+
+    public void OrderSuccess()
     {
-        return levelManager.currentLevel * 20;
+        successfulOrder++;
+
+        if (successfulOrder >= maxCustomer) SceneManager.LoadScene(sceneNumber + 1);
+
+        UpdateBackgroundAlpha();
     }
 
-    public void TryLevelUp()
+    private void UpdateBackgroundAlpha()
     {
-        if (reputationManager.GetCurrentReputation() >= GetRequiredReputation())
-        {
-            levelManager.LevelUp();
-            UpdateUI();
+        float alpha = 1f - ((float)successfulOrder / maxCustomer);
+        alpha = Mathf.Clamp01(alpha); // Ensure value stays between 0-1
 
-            // Refresh ingredient displays
-            IngredientDisplay[] displays = FindObjectsOfType<IngredientDisplay>();
-            foreach (var display in displays)
-            {
-                display.gameObject.SetActive(levelManager.IsIngredientAvailable(display.ingredient.name));
-            }
+        // For UI Image
+        if (background != null)
+        {
+            Color newColor = background.color;
+            newColor.a = alpha;
+            background.color = newColor;
         }
     }
 }
