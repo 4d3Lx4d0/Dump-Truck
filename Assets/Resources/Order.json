@@ -8,25 +8,30 @@
             ],
             "Order": [
                 {
-                    "prompt": "1 lettuce 1 tomat",
-                    "ingredients": [{"name": "Lettuce", "count": 1}, {"name": "Tomato", "count": 1}], 
+                    "prompt": "2 Lettuce + 4 Tomatos",
+                    "ingredients": [{"name": "Lettuce", "count": 2}, {"name": "Tomato", "count": 4}], 
                                     
                     "type": "Veggie"
                 },
                 {
-                    "prompt": "2 tomat 1 let",
-                    "ingredients": [{"name": "Tomato", "count": 2}, {"name": "Lettuce", "count": 1}],
+                    "prompt": "3 Bacon only",
+                    "ingredients": [{"name": "Bacon", "count": 3}],
                     "type": "Veggie"
                 },
                 {
-                    "prompt": "1 tomat 2 let",
-                    "ingredients": [{"name": "Tomato", "count": 1}, {"name": "Lettuce", "count": 2}],
+                    "prompt": "3 Tomatos and 2 Lettuce",
+                    "ingredients": [{"name": "Tomato", "count": 4}, {"name": "Lettuce", "count": 2}],
                     "type": "Veggie"
                 },
                
                 {
-                    "prompt": "2 tomat 2 let 2 bacon",
-                    "ingredients": [{"name": "Tomato", "count": 2}, {"name": "Lettuce", "count": 2}, {"name": "Bacon", "count": 2}],
+                    "prompt": "3 tomat 2 let 2 bacon",
+                    "ingredients": [{"name": "Tomato", "count": 3}, {"name": "Lettuce", "count": 2}, {"name": "Bacon", "count": 2}],
+                    "type": "Veggie"
+                },
+                {
+                    "prompt": "2 Tomatos, 1 Lettuce and 1 Bacon",
+                    "ingredients": [{"name": "Tomato", "count": 2}, {"name": "Lettuce", "count": 1}, {"name": "Bacon", "count": 1}],
                     "type": "Veggie"
                 }
             ]
@@ -122,12 +127,21 @@
                     "type": "Combo"
                 },
                 {
-                    "prompt": "no meat 3 of everything",
+                    "prompt": "Veggie Sandwich (4 of each veggies)",
                     "ingredients": [
-                        {"name": "Cheese", "count": 3},
-                        {"name": "Lettuce", "count": 3},
-                        {"name": "Tomato", "count": 3},
-                        {"name": "Onion", "count": 2}
+                        {"name": "Cheese", "count": 4},
+                        {"name": "Lettuce", "count": 4},
+                        {"name": "Tomato", "count": 4},
+                        {"name": "Onion", "count": 4}
+                    ],
+                    "type": "Combo"
+                },
+                {
+                    "prompt": "Meat Sandwich (3 of each)",
+                    "ingredients": [
+                        {"name": "Bacon", "count": 3},
+                        {"name": "GroundBeef", "count": 3},
+                        {"name": "Chicken", "count": 3}
                     ],
                     "type": "Combo"
                 }
