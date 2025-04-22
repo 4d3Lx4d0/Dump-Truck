@@ -87,7 +87,7 @@ public class IngredientDisplay : MonoBehaviour, IPointerClickHandler
     }
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (eventData.button == PointerEventData.InputButton.Right)UseRestock();
+        // if (eventData.button == PointerEventData.InputButton.Right)UseRestock();
     }
 
 }
