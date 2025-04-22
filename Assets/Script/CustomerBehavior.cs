@@ -66,8 +66,8 @@ public class CustomerBehavior : MonoBehaviour
         {
             int orderType = Random.Range(0, 4);
             TMP_Text prompt = orderDisplay.transform.GetChild(i).GetChild(0).GetComponent<TMP_Text>();
-            prompt.text = customerOrder.Level[sceneNumber].Order[orderType].prompt;
-            order.Add(customerOrder.Level[sceneNumber].Order[orderType]);
+            prompt.text = customerOrder.Level[sceneNumber-1].Order[orderType].prompt;
+            order.Add(customerOrder.Level[sceneNumber-1].Order[orderType]);
 
             orderDisplay.transform.GetChild(i).gameObject.SetActive(true);
         }
